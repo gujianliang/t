@@ -11,12 +11,18 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = "/h")
+@RequestMapping(value = "")
 public class OdinAPIs {
 
     List<Books> booksList = new ArrayList<Books>();
 
-    @GetMapping(value = "")
+    @GetMapping(value = "/r")
+    public String reply2(){
+        return "reply2";
+
+    }
+
+    @GetMapping(value = "/h")
     public String reply(){
         return "demo swagger start";
 
@@ -32,7 +38,7 @@ public class OdinAPIs {
 
     @ApiOperation(value="put books", notes="增加book")
     @ApiImplicitParam(name = "insert book", value = "", required = true, dataType = "Books")
-    @PostMapping(value = "")
+    @PostMapping(value = "/p")
     public String setIndex(@RequestBody Books books){
         System.out.println(books.getId());
         System.out.println(books.getValue());
