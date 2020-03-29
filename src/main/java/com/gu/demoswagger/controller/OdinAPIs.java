@@ -18,7 +18,7 @@ public class OdinAPIs {
 
     @GetMapping(value = "")
     public String reply(){
-        return "this is a demo ahaha";
+        return "demo swagger start";
 
     }
     @ApiOperation(value="get id number", notes="获取id号")
